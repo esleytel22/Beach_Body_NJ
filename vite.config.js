@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
  
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  // base is '/' for local dev, and your repo name for GitHub Pages production build
-  base: '/',
+  base: command === 'serve' ? '/' : 'Beach_Body_NJ/',
 }))
+ 
