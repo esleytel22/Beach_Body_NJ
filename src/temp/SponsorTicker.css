@@ -1,0 +1,75 @@
+.sponsor-ticker {
+  display: flex;
+  align-items: center;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(201,168,76,0.2);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  height: 72px;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Gold angled label pill on the left */
+.sponsor-ticker__label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #080808;
+  background: linear-gradient(135deg, #7A6030, #E8C870);
+  padding: 0 28px 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+  z-index: 1;
+}
+
+.sponsor-ticker__track-wrap {
+  overflow: hidden;
+  flex: 1;
+  /* Fade edges */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.sponsor-ticker__track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 45s linear infinite;
+  will-change: transform;
+}
+
+.sponsor-ticker__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  height: 72px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+.sponsor-ticker__logo {
+  height: 32px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.55;
+  transition: opacity 0.3s;
+  display: block;
+}
+
+/* Dark logos on dark bg need to be inverted to show as light */
+.sponsor-ticker__logo--invert {
+  filter: invert(1) brightness(0.75);
+}
+
+@media (hover: hover) {
+  .sponsor-ticker__logo-wrap:hover .sponsor-ticker__logo {
+    opacity: 1;
+  }
+}

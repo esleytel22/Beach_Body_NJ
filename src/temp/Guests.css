@@ -1,0 +1,57 @@
+.guests {
+  padding: 100px max(24px, env(safe-area-inset-left));
+  background: var(--obsidian);
+  position: relative; overflow: hidden;
+}
+.guests__inner { max-width: 1100px; margin: 0 auto; }
+.guests__header { margin-bottom: 48px; }
+.guests__eyebrow {
+  font-family: 'Rajdhani', sans-serif; font-weight: 600;
+  font-size: 12px; letter-spacing: 5px; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.guests__heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px,6vw,72px); line-height: 0.9; color: var(--cream);
+}
+.guests__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+  gap: 2px;
+}
+@media (max-width: 480px) { .guests__grid { grid-template-columns: 1fr; } }
+
+.guest-card {
+  padding: 28px; position: relative; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.3s, border-color 0.3s;
+  -webkit-tap-highlight-color: transparent;
+}
+.guest-card__top {
+  position: absolute; top:0; left:0; right:0; height: 2px;
+}
+@media (hover:hover) {
+  .guest-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(201,168,76,0.2);
+  }
+}
+.guest-card__avatar {
+  width: 56px; height: 56px; font-size: 24px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+  clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+}
+.guest-card__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 1px;
+  color: var(--cream); margin-bottom: 6px;
+}
+.guest-card__title {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 14px; color: #666; line-height: 1.4;
+}
+.guest-card__corner {
+  position: absolute; bottom: 16px; right: 16px;
+  font-size: 12px; opacity: 0.3;
+}

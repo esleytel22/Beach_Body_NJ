@@ -1,0 +1,96 @@
+.footer {
+  background: var(--obsidian-2);
+  padding-bottom: max(0px, env(safe-area-inset-bottom));
+}
+.footer__top { }
+.footer__inner {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  flex-wrap: wrap; gap: 40px;
+  padding: 48px max(40px, env(safe-area-inset-left));
+}
+@media (max-width: 640px) {
+  .footer__inner { flex-direction: column; align-items: center; text-align: center; }
+}
+.footer__logo {
+  font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 4px;
+  color: var(--gold-light); line-height: 1; margin-bottom: 6px;
+}
+.footer__logo span { color: var(--chrome); }
+.footer__tagline {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 13px; color: #444;
+}
+.footer__links { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; }
+.footer__social { display: flex; flex-direction: column; gap: 8px; }
+.footer__social-link {
+  font-family: 'Rajdhani', sans-serif; font-weight: 600;
+  font-size: 12px; letter-spacing: 2px; color: #333;
+  cursor: pointer; text-transform: uppercase; transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover:hover) { .footer__social-link:hover { color: var(--gold); } }
+.footer__bottom { }
+.footer__copy {
+  font-family: 'Rajdhani', sans-serif; font-size: 12px; letter-spacing: 1px;
+  color: #2a2a2a; text-align: center;
+  padding: 20px max(40px, env(safe-area-inset-left));
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px max(40px, env(safe-area-inset-left));
+}
+
+@media (max-width: 640px) {
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer__legal-link {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .footer__legal-link:hover { color: var(--gold); }
+}
+
+.footer__legal-sep {
+  color: var(--gold-dim);
+  font-size: 7px;
+  opacity: 0.4;
+}
+
+/* Override browser default anchor styles on legal links */
+.footer__legal-link {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #444 !important;
+  text-decoration: none !important;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s;
+}
+
+@media (hover: hover) {
+  .footer__legal-link:hover { color: var(--gold) !important; }
+}

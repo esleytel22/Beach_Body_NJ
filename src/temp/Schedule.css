@@ -1,0 +1,74 @@
+.schedule {
+  padding: 100px max(24px, env(safe-area-inset-left));
+  background: var(--obsidian-2);
+}
+.schedule__inner { max-width: 1000px; margin: 0 auto; }
+.schedule__header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  flex-wrap: wrap; gap: 24px; margin-bottom: 40px;
+}
+.schedule__eyebrow {
+  font-family: 'Rajdhani', sans-serif; font-weight: 600;
+  font-size: 12px; letter-spacing: 5px; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.schedule__heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px,6vw,72px); line-height: 0.9;
+  color: var(--cream);
+}
+.schedule__tabs { display: flex; gap: 4px; }
+.schedule__tab {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 10px 20px; min-height: 44px;
+  background: transparent; color: var(--chrome-dim);
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer; -webkit-appearance: none; appearance: none;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+  transition: all 0.2s; outline: none;
+}
+.schedule__tab--active {
+  background: var(--gold); color: var(--obsidian); border-color: var(--gold);
+}
+
+.schedule__row {
+  display: grid;
+  grid-template-columns: 80px 36px 1fr auto;
+  align-items: center; gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.2s;
+}
+@media (max-width: 600px) {
+  .schedule__row {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 4px 12px;
+  }
+  .schedule__time  { grid-column:1; grid-row:2; font-size:11px; }
+  .schedule__icon  { display:none; }
+  .schedule__badge { grid-column:2; grid-row:1; }
+}
+.schedule__row--alt { background: rgba(255,255,255,0.015); }
+@media (hover:hover) {
+  .schedule__row:hover { background: rgba(201,168,76,0.05) !important; }
+}
+.schedule__time {
+  font-family: 'Rajdhani', sans-serif; font-weight: 500;
+  font-size: 13px; color: var(--chrome-dim); letter-spacing: 1px;
+}
+.schedule__icon { font-size: 20px; }
+.schedule__title {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: clamp(15px,2.5vw,18px); color: var(--cream); letter-spacing: 0.5px;
+}
+.schedule__room {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 13px; color: #555; margin-top: 2px;
+}
+.schedule__badge {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: 10px; letter-spacing: 2px;
+  padding: 4px 10px; border: 1px solid; white-space: nowrap;
+}

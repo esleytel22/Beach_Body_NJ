@@ -1,0 +1,46 @@
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 max(40px, env(safe-area-inset-left));
+  padding-right: max(40px, env(safe-area-inset-right));
+  height: 70px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: transparent;
+  transition: background 0.4s, border-bottom 0.4s;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+.navbar--scrolled {
+  background: rgba(8,8,8,0.97);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.navbar__logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px; letter-spacing: 3px;
+  color: var(--gold-light);
+  user-select: none;
+}
+.navbar__logo-accent { color: var(--chrome); }
+.navbar__links {
+  display: flex; gap: 36px;
+}
+@media (max-width: 768px) { .navbar__links { display: none; } }
+.navbar__actions { display: flex; gap: 16px; align-items: center; }
+.navbar__cart {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: 14px; letter-spacing: 1px;
+  color: var(--gold); padding: 8px 14px;
+  border: 1px solid rgba(201,168,76,0.3);
+  min-height: 44px; display: flex; align-items: center;
+}
+.navbar__cta {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: 13px; letter-spacing: 3px;
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+  color: var(--obsidian); border: none; cursor: pointer;
+  padding: 12px 24px; min-height: 44px;
+  -webkit-appearance: none; appearance: none;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+  clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+  transition: filter 0.2s;
+}
+@media (hover:hover) { .navbar__cta:hover { filter: brightness(1.2); } }

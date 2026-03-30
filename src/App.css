@@ -1,0 +1,7 @@
+.app-root {
+  background: var(--obsidian);
+  color: var(--cream);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
