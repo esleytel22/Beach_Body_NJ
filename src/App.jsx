@@ -55,8 +55,10 @@ function LegalPage({ children }) {
 }
 
 export default function App() {
+  const basename = import.meta.env.PROD ? '/Beach_Body_NJ' : '/';
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <GlobalStyles />
       <Routes>
         <Route path="/"                 element={<MainSite />} />
