@@ -29,7 +29,7 @@ export const GUESTS = [
 
 export const TICKETS = [
   {
-    name: "GENERAL",
+    name: "GENERAL test",
     paymentLink: "https://buy.stripe.com/test_7sYcN50KXeK0dPY5ysgbm03",
     price: 49,
     color: "#888",
